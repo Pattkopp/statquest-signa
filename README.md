@@ -61,6 +61,19 @@ docker run -p 8888:8888 --name jupyter-env pytorch-jupyter
 # go to this url to see the notebooks in this repo in your Jupyter setup!: http://localhost:8888/
 ```
 
+### Local Setup with uv (Alternative to Docker)
+
+```bash
+# Install uv if you haven't already
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Sync dependencies
+uv sync
+
+# Run Jupyter
+uv run jupyter notebook
+```
+
 ## 🔄 Git Remote Configuration
 
 This repository is configured to pull updates from the original StatQuest repo while only pushing to the fork:

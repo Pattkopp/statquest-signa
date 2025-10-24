@@ -26,7 +26,7 @@ docker run -p 8888:8888 --name jupyter-env pytorch-jupyter
 ```
 
 ### Dependencies
-All dependencies are managed via Poetry (see `pyproject.toml`):
+All dependencies are managed via `uv` (see `pyproject.toml`):
 - **PyTorch**: Core neural network framework
 - **Lightning**: Simplifies PyTorch training loops and optimization
 - **matplotlib/seaborn**: Visualization
@@ -108,9 +108,9 @@ Each notebook has direct links to run in cloud environments (see README.md chapt
 # Inside Docker container (already set up)
 # Access via http://localhost:8888/
 
-# Or install locally with Poetry
-poetry install --no-root
-jupyter notebook
+# Or install locally with uv
+uv sync
+uv run jupyter notebook
 ```
 
 ## Working with This Codebase
