@@ -61,6 +61,33 @@ docker run -p 8888:8888 --name jupyter-env pytorch-jupyter
 # go to this url to see the notebooks in this repo in your Jupyter setup!: http://localhost:8888/
 ```
 
+## 🔄 Git Remote Configuration
+
+This repository is configured to pull updates from the original StatQuest repo while only pushing to the fork:
+
+```bash
+# Add the original StatQuest repo as upstream (already done)
+git remote add upstream https://github.com/StatQuest/signa.git
+
+# Disable push to upstream to prevent accidental pushes (already done)
+git remote set-url --push upstream no_push
+```
+
+### Pulling Updates from Upstream
+
+To sync with the latest changes from the original StatQuest repository:
+
+```bash
+# Fetch updates from upstream
+git fetch upstream
+
+# Merge upstream changes into your current branch
+git merge upstream/main
+
+# Push updates to your fork
+git push origin main
+```
+
 
 
 <!--
